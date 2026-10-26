@@ -12,7 +12,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 | YOLO | ✅ earned | |
 | Quickdraw | ✅ earned | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
-| Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. 5 answers posted 2026-10-26, waiting for acceptance (see "Galaxy Brain answers" below) |
+| Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. 7 answers posted 2026-10-26, waiting for acceptance (see "Galaxy Brain answers" below) |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
 | Public Sponsor | ✅ earned | Sponsoring `opencv` publicly (2026-10-26). Can cancel any time; the badge stays |
 
@@ -39,10 +39,14 @@ curl -sL 'https://github.com/jeffrymahbuubi?tab=achievements' | grep -oE 'Achiev
 | community/community#211273 | Workflows not registered on a fork |
 | gotd/td#1858 | Telegram login code (pointed to Telegram support) |
 | utmapp/UTM#8012 | Windows 10 VM has no network (e1000/rtl8139) |
+| remix-run/remix#12085 | npm fonts 404 with the Tailwind CLI (asker has accepted answers 3 times) |
+| netbirdio/netbird#8322 | macOS Installer bundle relocation (asker has accepted answers twice) |
+
+How to pick questions likely to be accepted: favor askers who have accepted **other people's** answers before (search `author:<login> is:answered` and keep results where `answerChosenBy` is the asker and the answer's author is someone else). Skip 0-star repos where accounts accept each other's answers; that's badge farming. Candidate and asker-score dumps from 2026-10-26: `.claude-flow/logs/gb-*.tsv` (gitignored).
 
 Check which are accepted, and reply to any follow-up questions:
 ```bash
-for s in ruvnet/ruflo:4309 community/community:211223 community/community:211273 gotd/td:1858 utmapp/UTM:8012; do
+for s in ruvnet/ruflo:4309 community/community:211223 community/community:211273 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322; do
   r=${s%:*}; n=${s#*:}
   gh api graphql -f o=${r%/*} -f r=${r#*/} -F n=$n -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){discussion(number:$n){isAnswered answer{author{login}} comments{totalCount}}}}' \
     --jq "\"$s answered=\(.data.repository.discussion.isAnswered) by=\(.data.repository.discussion.answer.author.login // \"-\") comments=\(.data.repository.discussion.comments.totalCount)\""
