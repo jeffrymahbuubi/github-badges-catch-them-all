@@ -35,7 +35,7 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 | ruvnet/ruflo#4309 | ruflo prompt-injection report | yes |
 | gotd/td#1858 | Telegram login code | yes |
 | utmapp/UTM#8012 | Windows 10 VM network (e1000/rtl8139) | yes |
-| remix-run/remix#12085 | npm fonts 404 with the Tailwind CLI (asker has accepted answers 3 times) | yes |
+| remix-run/remix#12085 | npm fonts 404 with the Tailwind CLI (asker has accepted answers 3 times). 2026-10-26: asker replied with own `@font-face` workaround; we replied pointing out a missing `@` and relative URLs | yes |
 | netbirdio/netbird#8322 | macOS Installer bundle relocation (asker has accepted answers twice) | yes |
 | community/community#211223, #211273 | 2FA mismatch; workflows on a fork | **no** (Community forum) |
 
