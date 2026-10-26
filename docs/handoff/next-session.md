@@ -8,7 +8,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 ## Status (checked 2026-10-26)
 | Badge | Status | Notes |
 |---|---|---|
-| Pull Shark | ✅ earned | 47 merged PRs. Next tier (Silver) at 128 |
+| Pull Shark | ✅ earned (base tier) | 49 merged PRs, but only 4 in public repos; private contributions aren't shown on the profile. Bronze needs 16 |
 | YOLO | ✅ earned | |
 | Quickdraw | ✅ earned | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). Checked 2026-10-26: PR #1 and PR #2 are both merged into `main` with merge commits (trailer kept), the repo is public, and the co-author resolves to the separate account `claude`, so every requirement is met. GitHub confirmed achievement delays of **several days** with no fix timeline (community discussion #203416, update 2026-09-23). Wait; don't create test PRs. If it's still missing after about a week, report it there with links to the PRs |
@@ -57,7 +57,16 @@ done
 Highlights you have: **Pro**, **Developer Program Member** (registered 2026-10-26 with support email jeffryaun@gmail.com, website = this repo). Ones you could get without a popular repo:
 - **Security Advisory Credit**: get credited on an advisory accepted into the GitHub Advisory Database (report a real vulnerability through a repo's private vulnerability reporting).
 - **GitHub Campus Expert**: student program at education.github.com/experts; applications open periodically.
-Higher achievement tiers that come from normal work: Pull Shark Silver (128 merged PRs, you have about 47), Pair Extraordinaire Bronze (10 merged PRs co-authored with Claude).
+Higher achievement tiers that come from normal work: Pull Shark Bronze (16; only 4 public merged PRs count now), Pair Extraordinaire Bronze (10 merged PRs co-authored with Claude).
+
+### Full audit (3 parallel agents, 2026-10-26)
+- Quick: turn on Settings → Public profile → "Include private contributions on my profile" (may bump Pull Shark to Bronze; unconfirmed). Or do real work through 12+ PRs in public repos.
+- **Security Advisory Credit**: an improvement PR to `github/advisory-database` (the "Suggest improvements" form on an advisory) earns credit once merged, per the 2022 GitHub blog. Pick a PyPI advisory for ultralytics/onnx/torch/opencv-python that's missing a patched version or fix commit, and verify against upstream tags. Takes 1–3h; curation takes days to weeks.
+- **Finishing Touch** (new, 2026-10-15): merged PRs that "improved GitHub's UI quality"; probably only for GitHub/Primer contributors.
+- **Campus Expert**: applications open each July; needs more than 1 year of study left and Student Pack verification.
+- **GitHub Star**: someone else has to nominate you; it takes years of public footprint.
+- **Bug Bounty**: in-scope reports through HackerOne; low likelihood.
+- Not earnable: Heart On Your Sleeve and Open Sourcerer (live briefly in March 2026, then pulled), Arctic Code Vault, Mars 2020, Proxima (staff only).
 Not earnable now: Heart On Your Sleeve, Open Sourcerer (in testing), Arctic Code Vault, Mars 2020.
 
 ## Security notes
