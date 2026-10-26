@@ -12,7 +12,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 | YOLO | ✅ earned | |
 | Quickdraw | ✅ earned | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
-| Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. 7 answers posted 2026-10-26, waiting for acceptance (see "Galaxy Brain answers" below) |
+| Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. 7 answers posted 2026-10-26; 5 can count (see "Galaxy Brain answers" below). **Answers in `orgs/community` never count** (GitHub, 2024-02-06, community discussion #106536) |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
 | Public Sponsor | ✅ earned | Sponsoring `opencv` publicly (2026-10-26). Can cancel any time; the badge stays |
 
@@ -35,8 +35,8 @@ curl -sL 'https://github.com/jeffrymahbuubi?tab=achievements' | grep -oE 'Achiev
 | Discussion | Topic |
 |---|---|
 | ruvnet/ruflo#4309 | ruflo prompt-injection report |
-| community/community#211223 | GitHub Mobile 2FA number mismatch |
-| community/community#211273 | Workflows not registered on a fork |
+| community/community#211223 | GitHub Mobile 2FA number mismatch (Community forum, doesn't count for the badge) |
+| community/community#211273 | Workflows not registered on a fork (Community forum, doesn't count for the badge) |
 | gotd/td#1858 | Telegram login code (pointed to Telegram support) |
 | utmapp/UTM#8012 | Windows 10 VM has no network (e1000/rtl8139) |
 | remix-run/remix#12085 | npm fonts 404 with the Tailwind CLI (asker has accepted answers 3 times) |
@@ -52,6 +52,14 @@ for s in ruvnet/ruflo:4309 community/community:211223 community/community:211273
     --jq "\"$s answered=\(.data.repository.discussion.isAnswered) by=\(.data.repository.discussion.answer.author.login // \"-\") comments=\(.data.repository.discussion.comments.totalCount)\""
 done
 ```
+
+## Other profile badges (source: gomzyakov/github-achievements, 2026-10-26)
+Highlights you have: **Pro**. Ones you could get without a popular repo:
+- **Developer Program Member**: register at the GitHub Developer Program; free, and your MCP servers / axi CLIs count as integrations you maintain.
+- **Security Advisory Credit**: get credited on an advisory accepted into the GitHub Advisory Database (report a real vulnerability through a repo's private vulnerability reporting).
+- **GitHub Campus Expert**: student program at education.github.com/experts; applications open periodically.
+Higher achievement tiers that come from normal work: Pull Shark Silver (128 merged PRs, you have about 47), Pair Extraordinaire Bronze (10 merged PRs co-authored with Claude).
+Not earnable now: Heart On Your Sleeve, Open Sourcerer (in testing), Arctic Code Vault, Mars 2020.
 
 ## Security notes
 Kept in local Claude memory only (`ruflo-security-check`), not in this public repo.
