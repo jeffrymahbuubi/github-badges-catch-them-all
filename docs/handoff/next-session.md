@@ -12,7 +12,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 | YOLO | ✅ earned | |
 | Quickdraw | ✅ earned | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
-| Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. Answer 1 posted 2026-10-26: ruvnet/ruflo#4309 (discussioncomment-19191939), waiting for the asker to accept it |
+| Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. 5 answers posted 2026-10-26, waiting for acceptance (see "Galaxy Brain answers" below) |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
 | Public Sponsor | ✅ earned | Sponsoring `opencv` publicly (2026-10-26). Can cancel any time; the badge stays |
 
@@ -30,6 +30,24 @@ curl -sL 'https://github.com/jeffrymahbuubi?tab=achievements' | grep -oE 'Achiev
 - claude-flow initialized with `--minimal --no-global --no-mods ...`. `~/.claude` was verified unchanged.
 - claude-flow memory: namespace `github-badges`, key `badges-status-2026-10-26`.
 - Claude auto-memory: `github-badges-progress`, `no-tmp-work-in-project`.
+
+## Galaxy Brain answers (posted 2026-10-26)
+| Discussion | Topic |
+|---|---|
+| ruvnet/ruflo#4309 | ruflo prompt-injection report |
+| community/community#211223 | GitHub Mobile 2FA number mismatch |
+| community/community#211273 | Workflows not registered on a fork |
+| gotd/td#1858 | Telegram login code (pointed to Telegram support) |
+| utmapp/UTM#8012 | Windows 10 VM has no network (e1000/rtl8139) |
+
+Check which are accepted, and reply to any follow-up questions:
+```bash
+for s in ruvnet/ruflo:4309 community/community:211223 community/community:211273 gotd/td:1858 utmapp/UTM:8012; do
+  r=${s%:*}; n=${s#*:}
+  gh api graphql -f o=${r%/*} -f r=${r#*/} -F n=$n -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){discussion(number:$n){isAnswered answer{author{login}} comments{totalCount}}}}' \
+    --jq "\"$s answered=\(.data.repository.discussion.isAnswered) by=\(.data.repository.discussion.answer.author.login // \"-\") comments=\(.data.repository.discussion.comments.totalCount)\""
+done
+```
 
 ## Security notes
 Kept in local Claude memory only (`ruflo-security-check`), not in this public repo.
