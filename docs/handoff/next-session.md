@@ -10,7 +10,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 |---|---|---|
 | Pull Shark | ✅ earned | 47 merged PRs. Next tier (Silver) at 128 |
 | YOLO | ✅ earned | |
-| Quickdraw | ⏳ done, waiting for badge | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
+| Quickdraw | ✅ earned | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
 | Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
