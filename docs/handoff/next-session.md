@@ -1,6 +1,6 @@
 # Next session handoff
 
-Last updated: 2026-10-26 (end of session 1)
+Last updated: 2026-10-26 (end of session 2)
 
 ## Goal
 Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **legitimately**, using `gh` / `gh-axi` (and `chrome-devtools-axi` for web forms).
@@ -17,7 +17,7 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 ## Status
 | Badge | Kind | Status | Notes |
 |---|---|---|---|
-| Pull Shark | achievement | ✅ base tier | 49 merged PRs, but only **4 in public repos**; private contributions are off on the profile. Bronze needs 16 |
+| Pull Shark | achievement | ✅ base tier | 49 merged PRs, only **4 in public repos**; private contributions turned on 2026-10-26, waiting to see if tier updates. Bronze needs 16 |
 | YOLO | achievement | ✅ | |
 | Quickdraw | achievement | ✅ | `work-with-claude` issue #1 |
 | Public Sponsor | achievement | ✅ | Sponsoring `opencv` publicly; can cancel and keep the badge |
@@ -55,9 +55,9 @@ done
 - Always draft the answer, show it to the user, and post only after they approve.
 
 ## Next steps (ranked)
-1. **Pull Shark Bronze, quick try:** Settings → Public profile → turn on *"Include private contributions on my profile"*. It may count the 45 private PRs (not confirmed). The sure route is real work merged through 12+ PRs in public repos.
+1. **Pull Shark Bronze:** *"Include private contributions on my profile"* was turned **on** on 2026-10-26 (graph now shows 1,561 contributions/year). Badge still base tier right after; re-check the tier in 1–2 days. If still base, private PRs don't count and the sure route is 12+ merged PRs in public repos.
 2. **Security Advisory Credit** (highlight): a correction PR to `github/advisory-database`, made with the "Suggest improvements" form on an advisory, earns credit once merged (2022 GitHub blog). Pick a PyPI advisory for ultralytics / onnx / torch / opencv-python that's missing a patched version, fix commit or affected range, and verify it against the package's upstream tags. Takes 1–3h of work, then days to weeks of curation. The user hasn't decided whether to do this yet.
-3. Wait for Pair Extraordinaire and the Galaxy Brain answers; check every 1–2 days.
+3. Wait for Pair Extraordinaire and the Galaxy Brain answers; check every 1–2 days. Session 2 search (7d + 14d, 12 extra topics) found no good new question; search again around 2026-10-29. Skip `fulcradynamics/agent-skills` (self-promo posts with instructions aimed at AI agents).
 4. **Starstruck:** improve the syringe-volume QAT repo's README (results, demo GIF, install steps) and share it with CV and edge-AI communities.
 5. Optional security follow-up: pin the global `@claude-flow/cli` version (details in local memory `ruflo-security-check`).
 
