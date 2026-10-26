@@ -31,6 +31,9 @@ curl -sL 'https://github.com/jeffrymahbuubi?tab=achievements' | grep -oE 'Achiev
 - claude-flow memory: namespace `github-badges`, key `badges-status-2026-10-26`.
 - Claude auto-memory: `github-badges-progress`, `no-tmp-work-in-project`.
 
+## Security notes
+Kept in local Claude memory only (`ruflo-security-check`), not in this public repo.
+
 ## Next steps
 0. After 2026-10-27, re-check the profile to confirm Quickdraw and Pair Extraordinaire appeared. Pair tiers come from more real PRs co-authored with Claude in this repo (10 for Bronze). Commit attribution is enabled only in this project's `.claude/settings.json`.
    Galaxy Brain and Starstruck can't be automated legitimately: they need other people's accepted answers and stars.
