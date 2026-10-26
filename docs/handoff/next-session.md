@@ -14,7 +14,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
 | Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
-| Public Sponsor | ⬜ open | Sponsor anyone via GitHub Sponsors (needs a payment method) |
+| Public Sponsor | ⬜ open, user pays | Sponsor **publicly** (not private) via GitHub Sponsors. Verified pages: github.com/sponsors/opencv, /tiangolo (FastAPI), /pydantic, /jupyter, /curl |
 
 Re-check status:
 ```bash
@@ -32,6 +32,10 @@ curl -sL 'https://github.com/jeffrymahbuubi?tab=achievements' | grep -oE 'Achiev
 - Claude auto-memory: `github-badges-progress`, `no-tmp-work-in-project`.
 
 ## Next steps
+0. After 2026-10-27, re-check the profile to confirm Quickdraw and Pair Extraordinaire appeared. Pair tiers come from more real PRs co-authored with Claude in this repo (10 for Bronze). Commit attribution is enabled only in this project's `.claude/settings.json`.
+   Galaxy Brain and Starstruck can't be automated legitimately: they need other people's accepted answers and stars.
+
+For reference, how those two were done:
 1. Quickdraw (run both commands within 5 minutes):
    ```bash
    gh-axi issue create -R jeffrymahbuubi/work-with-claude --title "Quickdraw" --body "closing right away"
