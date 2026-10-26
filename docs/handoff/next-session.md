@@ -14,7 +14,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 | Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
 | Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
-| Public Sponsor | ⬜ open, user pays | Sponsor **publicly** (not private) via GitHub Sponsors. Verified pages: github.com/sponsors/opencv, /tiangolo (FastAPI), /pydantic, /jupyter, /curl |
+| Public Sponsor | ✅ earned | Sponsoring `opencv` publicly (2026-10-26). Can cancel any time; the badge stays |
 
 Re-check status:
 ```bash
