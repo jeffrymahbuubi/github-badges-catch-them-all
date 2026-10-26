@@ -54,8 +54,7 @@ done
 ```
 
 ## Other profile badges (source: gomzyakov/github-achievements, 2026-10-26)
-Highlights you have: **Pro**. Ones you could get without a popular repo:
-- **Developer Program Member**: README added (PR #2, merged 2026-10-26). **User still needs to submit** https://github.com/developer/register with integration URL https://github.com/jeffrymahbuubi/github-badges-catch-them-all. Afterwards, check that the profile Highlights show it.
+Highlights you have: **Pro**, **Developer Program Member** (registered 2026-10-26 with support email jeffryaun@gmail.com, website = this repo). Ones you could get without a popular repo:
 - **Security Advisory Credit**: get credited on an advisory accepted into the GitHub Advisory Database (report a real vulnerability through a repo's private vulnerability reporting).
 - **GitHub Campus Expert**: student program at education.github.com/experts; applications open periodically.
 Higher achievement tiers that come from normal work: Pull Shark Silver (128 merged PRs, you have about 47), Pair Extraordinaire Bronze (10 merged PRs co-authored with Claude).
