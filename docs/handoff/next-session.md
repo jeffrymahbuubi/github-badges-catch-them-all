@@ -11,7 +11,7 @@ Earn the remaining GitHub profile achievements for `jeffrymahbuubi`, legitimatel
 | Pull Shark | ✅ earned | 47 merged PRs. Next tier (Silver) at 128 |
 | YOLO | ✅ earned | |
 | Quickdraw | ✅ earned | `work-with-claude` issue #1 was opened and closed within seconds on 2026-10-26 |
-| Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). If no badge appears after 24h, GitHub doesn't count that email; use a human collaborator instead |
+| Pair Extraordinaire | ⏳ done, waiting for badge | Merged PR #1 in `github-badges-catch-them-all`, co-authored by Claude (`noreply@anthropic.com`). Checked 2026-10-26: PR #1 and PR #2 are both merged into `main` with merge commits (trailer kept), the repo is public, and the co-author resolves to the separate account `claude`, so every requirement is met. GitHub confirmed achievement delays of **several days** with no fix timeline (community discussion #203416, update 2026-09-23). Wait; don't create test PRs. If it's still missing after about a week, report it there with links to the PRs |
 | Galaxy Brain | ⬜ open | 2 answers accepted by **other people** in Discussions. Run `./scripts/find-galaxy-brain.sh [days]` every few days and answer the good matches yourself. 7 answers posted 2026-10-26; 5 can count (see "Galaxy Brain answers" below). **Answers in `orgs/community` never count** (GitHub, 2024-02-06, community discussion #106536) |
 | Starstruck | ⬜ open | 16 stars on one repo. Best so far: `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3) |
 | Public Sponsor | ✅ earned | Sponsoring `opencv` publicly (2026-10-26). Can cancel any time; the badge stays |
