@@ -24,7 +24,7 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 | Pro | highlight | ✅ | |
 | Developer Program Member | highlight | ✅ | Registered 2026-10-26; website = this repo |
 | Pair Extraordinaire | achievement | ⏳ waiting | PR #1 and PR #2 merged with `Co-authored-by: Claude` (resolves to the `claude` account). All requirements met; GitHub has known multi-day delays (community discussion #203416). Don't make test PRs. If it's still missing around 2026-11-02, report it in #203416 with links to the PRs |
-| Galaxy Brain | achievement | ⏳ waiting | Needs 2 accepted answers. 7 eligible answers posted, 0 accepted |
+| Galaxy Brain | achievement | ⏳ waiting | Needs 2 accepted answers. 8 eligible answers posted, 0 accepted |
 | Starstruck | achievement | ⬜ | 16★ on one repo; best is `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3★) |
 
 ## Galaxy Brain
@@ -39,11 +39,12 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 | netbirdio/netbird#8322 | macOS Installer bundle relocation (asker has accepted answers twice) | yes |
 | carla-simulator/carla#10123 | LiDAR/radar degradation in fog and rain (student; askers there mark answers 4/4 since Apr). Posted 2026-10-29 | yes |
 | isaac-sim/IsaacLab#8575 | Custom quadruped shakes under policy; checklist citing Isaac Lab actuator docs and config (askers mark 7/7 since Apr; question was 15 days old). Posted 2026-10-29 | yes |
+| sympy/sympy#30870 | Why `PartialDerivative._expand_partial_derivative()` is private; cites PR #18093, maintainer comment, source and tests (askers mark 11/11 since Apr). Posted 2026-10-29 | yes |
 | community/community#211223, #211273 | 2FA mismatch; workflows on a fork | **no** (Community forum) |
 
 Status loop:
 ```bash
-for s in ruvnet/ruflo:4309 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322 carla-simulator/carla:10123 isaac-sim/IsaacLab:8575; do
+for s in ruvnet/ruflo:4309 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322 carla-simulator/carla:10123 isaac-sim/IsaacLab:8575 sympy/sympy:30870; do
   r=${s%:*}; n=${s#*:}
   gh api graphql -f o=${r%/*} -f r=${r#*/} -F n=$n -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){discussion(number:$n){isAnswered answer{author{login}} comments{totalCount}}}}' \
     --jq "\"$s answered=\(.data.repository.discussion.isAnswered) by=\(.data.repository.discussion.answer.author.login // \"-\") comments=\(.data.repository.discussion.comments.totalCount)\""
@@ -67,6 +68,8 @@ done
    - **2026-10-29 follow-up check:** only replies on our threads are remix#12085 (asker's own fix; we already replied, last word is ours) and ruflo#4309 (third user agreeing). No follow-up needed. Reply only when the asker asks something new, says the fix failed, or adds logs.
    - **2026-10-29 last search** (script repos + 27 LLM/ML repos, 14d, bot-only replies counted as open): only good candidate was llama.cpp#31301 (uneven GPU use with `--cpu-moe`; cause is op offload of CPU-resident experts to GPU0). Drafted, **not posted** (user's call). The user also passed on autoware#7320. Reason given: big repos about GPU/parallel compute (llama.cpp) are too far from their expertise; **software/simulation projects like Isaac Sim/Isaac Lab and CARLA** are more believable. Supply of good questions in approved areas is low: wait for the 7 answers and run `./scripts/find-galaxy-brain.sh 3` around 2026-11-01.
    - **2026-10-29 software/simulation search** (37 repos: Isaac Lab/Sim, Newton, CARLA, MuJoCo, Genesis, ManiSkill, robosuite, Gazebo, Webots, Habitat, LeRobot, MetaDrive, SUMO, ML-Agents, Drake, Chrono, Open3D, PyVista…): nothing open in 30 days (bot-only replies counted as open). Relaxed to 45 days with asker-only replies: only NVlabs/curobo#725 (closed-chain kinematics costs, 6 weeks old), skipped as too specialized. These repos get a few questions a week and humans answer within a day, so check every 1–2 days with `./scripts/find-galaxy-brain.sh 2`. Newton, robosuite, Drake, Chrono, mujoco_playground, rsl_rl, esmini, BehaviorTree.CPP, PlotJuggler, viser, Mesa and NiceGUI were added to the script's repo list afterwards.
+   - **Omniverse/OpenUSD (2026-10-29):** OpenUSD has GitHub Discussions **off** (questions go to forum.aousd.org, which doesn't count); `usd-wg` has none. NVIDIA-Omniverse has Discussions only on PhysX, usd-exchange and usd-brep, with nothing open in 90 days. Isaac Sim questions get NVIDIA staff replies (`vick-yu`, `PeterL-NV`, `lhuang-svg`) within days; skip threads staff already handle.
+   - **Student-style search (2026-10-29):** FRC/FTC repos (WPILib, PhotonVision, AdvantageKit, PathPlanner, FtcRobotController, Road Runner, Pedro Pathing) were quiet (FRC off-season; most FRC Q&A is on Chief Delphi). Education/sim repos (OpenRocket, RocketPy, VPython, Manim, p5.js, pygame-ce, PyBaMM, Cantera, Astropy, SymPy…) gave one fit: **posted sympy#30870**. Re-check FTC repos during their season and FRC from January.
 4. **Starstruck:** improve the syringe-volume QAT repo's README (results, demo GIF, install steps) and share it with CV and edge-AI communities.
 5. Optional security follow-up: pin the global `@claude-flow/cli` version (details in local memory `ruflo-security-check`).
 
