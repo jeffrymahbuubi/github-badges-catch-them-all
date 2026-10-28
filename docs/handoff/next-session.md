@@ -1,6 +1,6 @@
 # Next session handoff
 
-Last updated: 2026-10-29 (session 3)
+Last updated: 2026-10-29 (end of session 3)
 
 ## Goal
 Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **legitimately**, using `gh` / `gh-axi` (and `chrome-devtools-axi` for web forms).
@@ -73,6 +73,7 @@ done
    - **Omniverse/OpenUSD (2026-10-29):** OpenUSD has GitHub Discussions **off** (questions go to forum.aousd.org, which doesn't count); `usd-wg` has none. NVIDIA-Omniverse has Discussions only on PhysX, usd-exchange and usd-brep, with nothing open in 90 days. Isaac Sim questions get NVIDIA staff replies (`vick-yu`, `PeterL-NV`, `lhuang-svg`) within days; skip threads staff already handle.
    - **Student-style search (2026-10-29):** FRC/FTC repos (WPILib, PhotonVision, AdvantageKit, PathPlanner, FtcRobotController, Road Runner, Pedro Pathing) were quiet (FRC off-season; most FRC Q&A is on Chief Delphi). Education/sim repos (OpenRocket, RocketPy, VPython, Manim, p5.js, pygame-ce, PyBaMM, Cantera, Astropy, SymPy…) gave one fit: **posted sympy#30870**. Re-check FTC repos during their season and FRC from January.
    - **Stalled-thread search (2026-10-29):** fresh questions in scientific/ML libraries (JAX, Equinox, xarray, scikit-learn, NetworkX, PyG, Optuna, Hydra, Textual…) were all announcements. A better source: unanswered threads where the **asker replied last** and nobody followed up (jq filter: last comment/reply author == asker, others ≠ us). Skip ones where a maintainer is the other party. Found and **posted colmap#4811** this way; carla#9980 skipped (already answered well by `morvayo`).
+   - **`--stalled 45` run (2026-10-29):** nothing answerable. Skipped: Frigate/aube/tine (maintainer is the other party), Isaac Sim #886/#894 (NVIDIA staff), claude-code-router#1907 (asker gave up), lm-evaluation-harness#4233 (solved by `stanleys12` via `jsonschema_bench`, not marked), mlx-serve#678 (long ongoing debug with `chrishotza`), plus off-topic/show-and-tell posts. **Plan:** pause deep searches; every 1–2 days run `./scripts/find-galaxy-brain.sh 2 && ./scripts/find-galaxy-brain.sh --stalled 7` and answer within a day.
 4. **Starstruck:** improve the syringe-volume QAT repo's README (results, demo GIF, install steps) and share it with CV and edge-AI communities.
 5. Optional security follow-up: pin the global `@claude-flow/cli` version (details in local memory `ruflo-security-check`).
 
