@@ -36,6 +36,9 @@ REPOS=(
   luxonis/depthai-core luxonis/depthai-python IntelRealSense/librealsense orbbec/pyorbbecsdk stereolabs/zed-sdk
   microsoft/AirSim CodexLabsLLC/Colosseum PX4/PX4-Autopilot ArduPilot/ardupilot
   mne-tools/mne-python pyqtgraph/pyqtgraph
+  newton-physics/newton ARISE-Initiative/robosuite RobotLocomotion/drake projectchrono/chrono
+  google-deepmind/mujoco_playground leggedrobotics/rsl_rl esmini/esmini BehaviorTree/BehaviorTree.CPP
+  facontidavide/PlotJuggler nerfstudio-project/viser projectmesa/mesa zauberzeug/nicegui
 )
 for r in "${REPOS[@]}"; do QUERIES+=("repo:$r is:unanswered"); done
 
