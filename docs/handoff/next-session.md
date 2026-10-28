@@ -24,7 +24,7 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 | Pro | highlight | ✅ | |
 | Developer Program Member | highlight | ✅ | Registered 2026-10-26; website = this repo |
 | Pair Extraordinaire | achievement | ⏳ waiting | PR #1 and PR #2 merged with `Co-authored-by: Claude` (resolves to the `claude` account). All requirements met; GitHub has known multi-day delays (community discussion #203416). Don't make test PRs. If it's still missing around 2026-11-02, report it in #203416 with links to the PRs |
-| Galaxy Brain | achievement | ⏳ waiting | Needs 2 accepted answers. 5 eligible answers posted, 0 accepted |
+| Galaxy Brain | achievement | ⏳ waiting | Needs 2 accepted answers. 6 eligible answers posted, 0 accepted |
 | Starstruck | achievement | ⬜ | 16★ on one repo; best is `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3★) |
 
 ## Galaxy Brain
@@ -37,11 +37,12 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 | utmapp/UTM#8012 | Windows 10 VM network (e1000/rtl8139) | yes |
 | remix-run/remix#12085 | npm fonts 404 with the Tailwind CLI (asker has accepted answers 3 times). 2026-10-26: asker replied with own `@font-face` workaround; we replied pointing out a missing `@` and relative URLs | yes |
 | netbirdio/netbird#8322 | macOS Installer bundle relocation (asker has accepted answers twice) | yes |
+| carla-simulator/carla#10123 | LiDAR/radar degradation in fog and rain (student; askers there mark answers 4/4 since Apr). Posted 2026-10-29 | yes |
 | community/community#211223, #211273 | 2FA mismatch; workflows on a fork | **no** (Community forum) |
 
 Status loop:
 ```bash
-for s in ruvnet/ruflo:4309 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322; do
+for s in ruvnet/ruflo:4309 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322 carla-simulator/carla:10123; do
   r=${s%:*}; n=${s#*:}
   gh api graphql -f o=${r%/*} -f r=${r#*/} -F n=$n -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){discussion(number:$n){isAnswered answer{author{login}} comments{totalCount}}}}' \
     --jq "\"$s answered=\(.data.repository.discussion.isAnswered) by=\(.data.repository.discussion.answer.author.login // \"-\") comments=\(.data.repository.discussion.comments.totalCount)\""
@@ -52,6 +53,7 @@ done
 - `./scripts/find-galaxy-brain.sh [days]` lists fresh questions with no replies in your topics.
 - Better targeting: favor askers who have accepted **other people's** answers before (`author:<login> is:answered` where `answerChosenBy` = the asker and the answer's author is someone else).
 - Skip 0-star repos where accounts accept each other's answers (badge farming).
+- Stay close to the user's profile (CV/sensing, Python/TS, LLM/agent tooling, web, Qt, Blender). Adjacent tools are fine; far-off domains (kernel, drivers, Zig/codelldb) are not.
 - Always draft the answer, show it to the user, and post only after they approve.
 
 ## Next steps (ranked)
@@ -59,7 +61,7 @@ done
 2. **Security Advisory Credit** (highlight): a correction PR to `github/advisory-database`, made with the "Suggest improvements" form on an advisory, earns credit once merged (2022 GitHub blog). Pick a PyPI advisory for ultralytics / onnx / torch / opencv-python that's missing a patched version, fix commit or affected range, and verify it against the package's upstream tags. Takes 1–3h of work, then days to weeks of curation. The user hasn't decided whether to do this yet.
 3. Wait for Pair Extraordinaire and the Galaxy Brain answers; check every 1–2 days. Session 2 search (7d + 14d, 12 extra topics) found no good new question. Skip `fulcradynamics/agent-skills` (self-promo posts with instructions aimed at AI agents).
    - **2026-10-29 check:** badges unchanged (Pull Shark still base 3 days after private contributions were turned on). All 5 answers still unaccepted; only new activity is a third user (`eduridden`) calling ruflo#4309 a false alarm (not the asker, no reply needed).
-   - **2026-10-29 search** (5d script + 10d wider: pytorch, docker, macos, vscode, tauri, uv, pip, github actions, react native, homebrew, fastapi, hugging face, cuda): skipped Smart-AutoClicker#1120 (maintainer-only), cc-switch#8894 (maintainer already on it in issue #8895), agent-control-standard#325 (spec question, repo never accepts). Drafted an answer for **vadimcn/codelldb#1421** (Zig watch vars on Windows; Zig emits PDB for COFF, try `-gdwarf32` or `cppvsdbg`). The user chose **not to post it**. Search again around 2026-11-01.
+   - **2026-10-29 search** (5d script + 10d wider: pytorch, docker, macos, vscode, tauri, uv, pip, github actions, react native, homebrew, fastapi, hugging face, cuda): skipped Smart-AutoClicker#1120 (maintainer-only), cc-switch#8894 (maintainer already on it in issue #8895), agent-control-standard#325 (spec question, repo never accepts). Drafted an answer for **vadimcn/codelldb#1421** (Zig watch vars on Windows; Zig emits PDB for COFF, try `-gdwarf32` or `cppvsdbg`). The user chose **not to post it** (not a tool they use). A profile-based search followed: mattpocock/skills and Ultralytics questions were already answered by others; **posted carla#10123**. Search again around 2026-11-01.
 4. **Starstruck:** improve the syringe-volume QAT repo's README (results, demo GIF, install steps) and share it with CV and edge-AI communities.
 5. Optional security follow-up: pin the global `@claude-flow/cli` version (details in local memory `ruflo-security-check`).
 
