@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 # Lists recent, answerable GitHub Discussions with no replies yet, in topics you know.
-# Usage: ./scripts/find-galaxy-brain.sh [days_back]   (default 14)
+# Usage: ./scripts/find-galaxy-brain.sh [--stalled] [days_back]   (default 14)
+#   --stalled  instead list unanswered threads where the asker replied last and nobody
+#              followed up (e.g. "that didn't work, now what?"). Skip ones where the
+#              other party is a maintainer who will follow up anyway.
 # Answer the good ones yourself; Galaxy Brain counts answers the asker marks as accepted.
 set -euo pipefail
 
+STALLED=0
+if [[ "${1:-}" == "--stalled" ]]; then STALLED=1; shift; fi
 DAYS="${1:-14}"
 SINCE=$(date -v-"${DAYS}"d +%Y-%m-%d 2>/dev/null || date -d "-${DAYS} days" +%Y-%m-%d)
 
@@ -44,6 +49,37 @@ for r in "${REPOS[@]}"; do QUERIES+=("repo:$r is:unanswered"); done
 
 # Titles that are announcements or requests rather than questions
 NOISE='Onboarding request|nomination|VOLUNTEER|open-source.*layer|faster than'
+
+if (( STALLED )); then
+  ME=$(gh api user --jq .login)
+  for q in "${QUERIES[@]}"; do
+    echo "== $q"
+    gh api graphql -f q="$q created:>$SINCE" -f query='
+      query($q: String!) {
+        search(query: $q, type: DISCUSSION, first: 50) {
+          nodes { ... on Discussion {
+            title url createdAt
+            author { login }
+            category { isAnswerable }
+            comments(last: 5) { totalCount nodes {
+              author { login } createdAt
+              replies(last: 1) { nodes { author { login } createdAt } }
+            } }
+          } }
+        }
+      }' | jq -r --arg me "$ME" '.data.search.nodes[]
+        | select(.category.isAnswerable and .comments.totalCount > 0)
+        | .author.login as $a
+        | ([.comments.nodes[] | {who: .author.login, t: .createdAt},
+            (.replies.nodes[] | {who: .author.login, t: .createdAt})] | sort_by(.t) | last) as $last
+        | ([.comments.nodes[] | .author.login, (.replies.nodes[] | .author.login)]
+            | map(select(. != $a)) | unique) as $others
+        | select($last.who == $a and ($others | length) > 0 and ($others | index($me) | not))
+        | "  \(.createdAt[:10]) asker-last=\($last.t[:10]) others=\($others | join(",")) \(.url) | \(.title)"' \
+      | grep -vE "$NOISE|orgs/community" || echo "  (none)"
+  done
+  exit 0
+fi
 
 for q in "${QUERIES[@]}"; do
   echo "== $q"

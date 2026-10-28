@@ -54,6 +54,7 @@ done
 
 **Finding more questions:**
 - `./scripts/find-galaxy-brain.sh [days]` lists fresh questions with no replies in your topics.
+- `./scripts/find-galaxy-brain.sh --stalled [days]` lists unanswered threads where the asker replied last and nobody followed up (excludes threads you're already in). Skip ones where the other party is a maintainer.
 - Better targeting: favor askers who have accepted **other people's** answers before (`author:<login> is:answered` where `answerChosenBy` = the asker and the answer's author is someone else).
 - Skip 0-star repos where accounts accept each other's answers (badge farming).
 - Stay close to the user's profile (CV/sensing, Python/TS, LLM/agent tooling, web, Qt, Blender). Adjacent tools are fine; far-off domains (kernel, drivers, Zig/codelldb) are not.
