@@ -81,6 +81,7 @@ done
 - Pull Shark went Bronze. Pair Extraordinaire still missing. 0 Galaxy Brain answers accepted.
 - sympy#30870: a maintainer called the answer "LLM output"; the user chose to delete it. Added the answer rules above and an AI-policy flag to `scripts/find-galaxy-brain.sh`.
 - Search (`2` + `--stalled 7`): nothing posted. Skipped IsaacSim#916 (deep debugging; NVIDIA staff territory) and OpenPCDet#1776 (broad 4-part research question). Repos with posted answers: no policy against AI help in discussions.
+- **GitHub Universe 2026 (Oct 28–29):** no profile achievement. The "new and improved badge" is the physical programmable conference badge (in-person only, sold out). The virtual pass and the recap tutorials (stacked PRs, Copilot app canvases) award nothing. "Kintsugi" from the community catalog PR #1010 is the same achievement as **Finishing Touch** (2026-10-15, catalog PR #1012); its only sample earner is GitHub's `dylanatsmith`, so it stays out of reach. Since 2026-09-11 profiles show the highest tier earned (GitHub changelog). That predates the 2026-10-29 base-tier check, so it doesn't explain the Bronze jump; private PRs counting still does.
 
 ## Session 3 log (2026-10-29)
 - Session 2 search (7d + 14d, 12 extra topics) found nothing. Skip `fulcradynamics/agent-skills` (self-promo posts with instructions aimed at AI agents).
