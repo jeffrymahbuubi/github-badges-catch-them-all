@@ -1,6 +1,6 @@
 # Next session handoff
 
-Last updated: 2026-10-29 (end of session 3)
+Last updated: 2026-10-30 (session 4)
 
 ## Goal
 Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **legitimately**, using `gh` / `gh-axi` (and `chrome-devtools-axi` for web forms).
@@ -17,14 +17,14 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 ## Status
 | Badge | Kind | Status | Notes |
 |---|---|---|---|
-| Pull Shark | achievement | ✅ base tier | 49 merged PRs, only **4 in public repos**. Private contributions turned on 2026-10-26; still base on 2026-10-29, so private PRs probably don't count. Bronze needs 16 public |
+| Pull Shark | achievement | ✅ **Bronze** | 49 merged PRs, only 4 in public repos. Private contributions turned on 2026-10-26; still base on 2026-10-29, **Bronze on 2026-10-30**. So private PRs count, with a ~4-day delay. Next tier (Silver) needs 128 |
 | YOLO | achievement | ✅ | |
 | Quickdraw | achievement | ✅ | `work-with-claude` issue #1 |
 | Public Sponsor | achievement | ✅ | Sponsoring `opencv` publicly; can cancel and keep the badge |
 | Pro | highlight | ✅ | |
 | Developer Program Member | highlight | ✅ | Registered 2026-10-26; website = this repo |
 | Pair Extraordinaire | achievement | ⏳ waiting | PR #1 and PR #2 merged with `Co-authored-by: Claude` (resolves to the `claude` account). All requirements met; GitHub has known multi-day delays (community discussion #203416). Don't make test PRs. If it's still missing around 2026-11-02, report it in #203416 with links to the PRs |
-| Galaxy Brain | achievement | ⏳ waiting | Needs 2 accepted answers. 9 eligible answers posted, 0 accepted |
+| Galaxy Brain | achievement | ⏳ waiting | Needs 2 accepted answers. 8 eligible answers up, 0 accepted (sympy answer deleted 2026-10-30) |
 | Starstruck | achievement | ⬜ | 16★ on one repo; best is `ultralytics-qat-intelligent-syringe-volume-measurement-project` (3★) |
 
 ## Galaxy Brain
@@ -39,13 +39,13 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 | netbirdio/netbird#8322 | macOS Installer bundle relocation (asker has accepted answers twice) | yes |
 | carla-simulator/carla#10123 | LiDAR/radar degradation in fog and rain (student; askers there mark answers 4/4 since Apr). Posted 2026-10-29 | yes |
 | isaac-sim/IsaacLab#8575 | Custom quadruped shakes under policy; checklist citing Isaac Lab actuator docs and config (askers mark 7/7 since Apr; question was 15 days old). Posted 2026-10-29 | yes |
-| sympy/sympy#30870 | Why `PartialDerivative._expand_partial_derivative()` is private; cites PR #18093, maintainer comment, source and tests (askers mark 11/11 since Apr). Posted 2026-10-29 | yes |
+| ~~sympy/sympy#30870~~ | **Deleted 2026-10-30.** Maintainer `oscarbenjamin` replied: "Please don't dump LLM output as if it is a comment from yourself." SymPy has `doc/src/contributing/ai-generated-code-policy.rst`. An empty "deleted" placeholder remains because his reply was nested under it | — |
 | colmap/colmap#4811 | Asker's unanswered follow-up on sequential-matcher loop closure: rerun mapper; set `loop_detection_min_index_distance`; `global_mapper`. Builds on xop01's earlier reply (askers chose 7/7 all-time; new asker). Posted 2026-10-29 | yes |
 | community/community#211223, #211273 | 2FA mismatch; workflows on a fork | **no** (Community forum) |
 
 Status loop:
 ```bash
-for s in ruvnet/ruflo:4309 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322 carla-simulator/carla:10123 isaac-sim/IsaacLab:8575 sympy/sympy:30870 colmap/colmap:4811; do
+for s in ruvnet/ruflo:4309 gotd/td:1858 utmapp/UTM:8012 remix-run/remix:12085 netbirdio/netbird:8322 carla-simulator/carla:10123 isaac-sim/IsaacLab:8575 colmap/colmap:4811; do
   r=${s%:*}; n=${s#*:}
   gh api graphql -f o=${r%/*} -f r=${r#*/} -F n=$n -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){discussion(number:$n){isAnswered answer{author{login}} comments{totalCount}}}}' \
     --jq "\"$s answered=\(.data.repository.discussion.isAnswered) by=\(.data.repository.discussion.answer.author.login // \"-\") comments=\(.data.repository.discussion.comments.totalCount)\""
@@ -58,16 +58,29 @@ done
 - Better targeting: favor askers who have accepted **other people's** answers before (`author:<login> is:answered` where `answerChosenBy` = the asker and the answer's author is someone else).
 - Skip 0-star repos where accounts accept each other's answers (badge farming).
 - Stay close to the user's profile (CV/sensing, Python/TS, LLM/agent tooling, web, Qt, Blender). Adjacent tools are fine; far-off domains (kernel, drivers, Zig/codelldb) are not.
+- Both script modes print `⚠ AI policy? <repo> <file>` under results whose repo has an AI policy (dedicated file anywhere in the tree, or AI mentioned in CONTRIBUTING / CODE_OF_CONDUCT, falling back to the org's `.github`). It's a flag, not a filter: open the file. Skip repos that ban or restrict AI replies (e.g. jdx/mise: "AI replies to Discussions and Issues are restricted"; cc-tweaked: no generative AI). UTM and NetBird hits are about code PRs only.
 - Always draft the answer, show it to the user, and post only after they approve.
+
+**Answer rules (after the SymPy callout, 2026-10-30):**
+- Post only answers the user owns: AI may find the PR, source line or doc section, but the user checks it and the answer must be one they could defend in a follow-up without AI.
+- Keep it short: 3–6 lines pointing at the one relevant doc/source line. No long checklists or multi-section write-ups.
+- Disclose AI help when it matters (one line), and never post in repos whose policy bans it.
+- Skip threads that want a human answer: personal experience or judgment, repos with fast active maintainers (SymPy, NVIDIA Isaac Sim staff), and broad multi-part research questions (e.g. OpenPCDet#1776).
+- Don't try to make AI text look human. If a maintainer objects, delete the answer or add a disclosure line.
 - Preferred shape: CARLA-style questions in sim/robotics/CV repos, answered by citing the project's own docs/API/source. Prefer software/simulation config and API questions (Isaac Sim/Lab, CARLA); skip GPU/inference-engine tuning (llama.cpp, vLLM internals) and hardware-specific questions. Check every docs URL resolves to the quoted text before posting.
 
 ## Next steps (ranked)
-1. **Daily check (2 min):** run the status loop, then `./scripts/find-galaxy-brain.sh 2 && ./scripts/find-galaxy-brain.sh --stalled 7`. Draft answers only for software/simulation questions that the project's own docs/source can answer; post after approval.
-2. **Around 2026-11-01:** full status check of the 9 answers. **2026-11-02:** if Pair Extraordinaire is still missing, report it in community discussion #203416 with links to PR #1 and #2.
-3. **Pull Shark Bronze:** private contributions didn't move the tier. The sure route is 12+ merged PRs in public repos (real fixes only, no PR spam).
+1. **Daily check (2 min):** run the status loop, then `./scripts/find-galaxy-brain.sh 2 && ./scripts/find-galaxy-brain.sh --stalled 7`. Draft answers only for software/simulation questions that the project's own docs/source can answer, following the answer rules above; post after approval.
+2. **Around 2026-11-01:** full status check of the 8 answers. **2026-11-02:** if Pair Extraordinaire is still missing, report it in community discussion #203416 with links to PR #1 and #2.
+3. **Pull Shark:** Bronze reached. Silver (128) isn't realistic soon; no action.
 4. **Security Advisory Credit** (highlight): a correction PR to `github/advisory-database`, made with the "Suggest improvements" form on an advisory, earns credit once merged (2022 GitHub blog). Pick a PyPI advisory for ultralytics / onnx / torch / opencv-python that's missing a patched version, fix commit or affected range, and verify it against the package's upstream tags. 1–3h of work, then days to weeks of curation. Not decided yet.
 5. **Starstruck:** improve the syringe-volume QAT repo's README (results, demo GIF, install steps) and share it with CV and edge-AI communities.
 6. Optional security follow-up: pin the global `@claude-flow/cli` version (details in local memory `ruflo-security-check`).
+
+## Session 4 log (2026-10-30)
+- Pull Shark went Bronze. Pair Extraordinaire still missing. 0 Galaxy Brain answers accepted.
+- sympy#30870: a maintainer called the answer "LLM output"; the user chose to delete it. Added the answer rules above and an AI-policy flag to `scripts/find-galaxy-brain.sh`.
+- Search (`2` + `--stalled 7`): nothing posted. Skipped IsaacSim#916 (deep debugging; NVIDIA staff territory) and OpenPCDet#1776 (broad 4-part research question). Repos with posted answers: no policy against AI help in discussions.
 
 ## Session 3 log (2026-10-29)
 - Session 2 search (7d + 14d, 12 extra topics) found nothing. Skip `fulcradynamics/agent-skills` (self-promo posts with instructions aimed at AI agents).
