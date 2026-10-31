@@ -4,7 +4,8 @@
     "command": "sh -c 'D=\"${CLAUDE_PROJECT_DIR:-.}\"; [ -f \"$D/.claude/helpers/statusline.cjs\" ] || D=\"${HOME}\"; exec node \"$D/.claude/helpers/statusline.cjs\"'"
   },
   "attribution": {
-    "commit": "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    "commit": "",
+    "pr": ""
   },
   "permissions": {
     "allow": [
