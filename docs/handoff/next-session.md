@@ -76,6 +76,7 @@ Earn the GitHub profile badges that `jeffrymahbuubi` can realistically get, **le
 - Profile: Pull Shark Bronze, Galaxy Brain, **Starstruck (new)**, Public Sponsor, Quickdraw, YOLO, plus the Developer Program Member highlight. Pair Extraordinaire is still missing.
 - Starstruck comes from `watcher-claude-usage`, mostly through a 13-minute burst of stars from 0-repo accounts (the same burst as the Galaxy Brain askers). Neither badge counts toward the legit-only goal. I raised the AUP risk with the user.
 - Explained Security Advisory Credit: route 1 (correct an existing advisory with "Suggest improvements") needs no hacking experience, only checking an advisory's versions and commits against upstream. Route 2 (report a new vulnerability) needs real security research skills.
+- **Commit attribution turned off** (user's call): `attribution.commit` and `attribution.pr` are now `""` in `.claude/settings.json`. The session 6 commit (`dea9eee`) was amended to drop its `Co-Authored-By` trailer before it was pushed. Older public commits (incl. PR #1 and #2 for Pair Extraordinaire) are unchanged.
 
 ## Session 5 log (2026-10-30)
 - Profile: Galaxy Brain ✅ (default tier), Pull Shark Bronze, Public Sponsor, Quickdraw, YOLO. Pair Extraordinaire still missing.
